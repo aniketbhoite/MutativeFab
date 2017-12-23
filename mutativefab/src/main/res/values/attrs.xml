@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MutativeFab">
+        <attr name="fabTextColor" format="color" />
+        <attr name="fabTextVisibility">
+            <!-- Visible on screen; the default value. -->
+            <enum name="visible" value="0" />
+            <!-- Completely hidden, as if the view had not been added. -->
+            <enum name="gone" value="8" />
+        </attr>
+        <attr name="fabText" format="string" />
+        <attr name="fabIcon" format="integer" />
+        <attr name="fabBackgroundColor" format="color" />
+    </declare-styleable>
+</resources>
