@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint_Layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
     android:background="@drawable/fab_background"
-    android:padding="8dp"
+    android:padding="14dp"
     android:elevation="2dp"
     android:layout_margin="4dp"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -16,10 +17,11 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        tools:src="@drawable/ic_chat"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -27,12 +29,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:layout_marginTop="8dp"
         android:maxLines="1"
         android:textAllCaps="true"
+        android:textStyle="bold"
+        tools:text="@string/app_name"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image"

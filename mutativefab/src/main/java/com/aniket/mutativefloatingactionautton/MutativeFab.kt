@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
+import android.support.annotation.ColorInt
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
 import android.support.v4.content.ContextCompat
@@ -27,7 +28,6 @@ class MutativeFab : ConstraintLayout {
     private lateinit var constraintLayout: ConstraintLayout
     private var textVisibility = true
     private val animationDuration: Long = 150
-    private lateinit var ogText: String
     private val constraintSet1 = ConstraintSet()
     private val constraintSet2 = ConstraintSet()
 
@@ -40,7 +40,6 @@ class MutativeFab : ConstraintLayout {
         imageView = view.findViewById(R.id.image)
         textView = view.findViewById(R.id.card_textView)
         constraintLayout = view.findViewById(R.id.constraint_Layout)
-        ogText = textView.text.toString()
         constraintSet1.clone(constraintLayout)
         constraintSet2.clone(context, R.layout.mutative_fab_layout_alt)
     }
@@ -86,7 +85,6 @@ class MutativeFab : ConstraintLayout {
 
     fun setFabText(text: String) {
         textView.text = text
-        ogText = text
     }
 
 
@@ -110,11 +108,11 @@ class MutativeFab : ConstraintLayout {
     }
 
 
-    fun setFabTextColor(color: Int) {
+    fun setFabTextColor(@ColorInt color: Int) {
         textView.setTextColor(color)
     }
 
-    fun setFabBackgroundColor(color: Int) {
+    fun setFabBackgroundColor(@ColorInt color: Int) {
         val background = constraintLayout.background as RippleDrawable
         val bgShape = background.findDrawableByLayerId(R.id.fab_shape) as GradientDrawable
         bgShape.setColor(color)
