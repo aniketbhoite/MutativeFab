@@ -1,6 +1,10 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.aniketbhoite'
+
 android {
     compileSdkVersion 26
     buildToolsVersion '27.0.2'
@@ -39,10 +43,8 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'    }
 }
-apply plugin: 'com.github.dcendents.android-maven'
-
-group='com.github.aniketbhoite'
