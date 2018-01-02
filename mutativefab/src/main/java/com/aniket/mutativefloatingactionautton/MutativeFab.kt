@@ -68,7 +68,7 @@ class MutativeFab : ConstraintLayout {
         setFabIcon(imageResId)
         setFabText(fabText)
         setFabTextVisibility(fabTextVisibility)
-        setFabBackgroundColor(fabBackgroundColor)
+//        setFabBackgroundColor(fabBackgroundColor)
         setFabTextColor(fabTextColor)
 
         typedArray.recycle()
