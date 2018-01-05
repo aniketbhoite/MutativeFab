@@ -2,6 +2,7 @@ package com.aniket.mutativefloatingactionautton
 
 import android.content.Context
 import android.content.res.TypedArray
+import android.graphics.PorterDuff
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
 import android.support.annotation.ColorInt
@@ -68,7 +69,7 @@ class MutativeFab : ConstraintLayout {
         setFabIcon(imageResId)
         setFabText(fabText)
         setFabTextVisibility(fabTextVisibility)
-//        setFabBackgroundColor(fabBackgroundColor)
+        setFabBackgroundColor(fabBackgroundColor)
         setFabTextColor(fabTextColor)
 
         typedArray.recycle()
@@ -113,9 +114,7 @@ class MutativeFab : ConstraintLayout {
     }
 
     fun setFabBackgroundColor(@ColorInt color: Int) {
-        val background = constraintLayout.background as RippleDrawable
-        val bgShape = background.findDrawableByLayerId(R.id.fab_shape) as GradientDrawable
-        bgShape.setColor(color)
+        constraintLayout.background.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
     }
 
 
