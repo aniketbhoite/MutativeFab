@@ -1,10 +1,8 @@
-package com.aniket.mutativefloatingactionautton
+package com.aniket.mutativefloatingactionabutton
 
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.PorterDuff
-import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.RippleDrawable
 import android.support.annotation.ColorInt
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
@@ -114,7 +112,7 @@ class MutativeFab : ConstraintLayout {
     }
 
     fun setFabBackgroundColor(@ColorInt color: Int) {
-        constraintLayout.background.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
+        constraintLayout.background.mutate().setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
     }
 
 

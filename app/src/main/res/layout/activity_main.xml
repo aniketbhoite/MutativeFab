@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="visible"/>
 
-    <com.aniket.mutativefloatingactionautton.MutativeFab
+    <com.aniket.mutativefloatingactionabutton.MutativeFab
         android:id="@+id/m_fab"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

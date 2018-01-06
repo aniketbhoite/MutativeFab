@@ -1,4 +1,4 @@
-package com.aniket.mutativefloatingactionautton;
+package com.aniket.mutativefloatingactionabutton;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -7,8 +7,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
-import com.aniket.mutativefloatingactionautton.MutativeFab
+import com.aniket.mutativefloatingactionabutton.MutativeFab
 
 
 class MainActivity : AppCompatActivity() {
