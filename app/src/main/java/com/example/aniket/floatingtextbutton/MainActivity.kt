@@ -7,7 +7,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
-import com.aniket.mutativefloatingactionabutton.MutativeFab
+import com.aniket.mutativefloatingactionbutton.MutativeFab
 
 
 class MainActivity : AppCompatActivity() {

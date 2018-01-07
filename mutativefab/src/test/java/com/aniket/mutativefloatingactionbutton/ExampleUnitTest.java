@@ -1,4 +1,4 @@
-package com.aniket.mutativefloatingactionabutton;
+package com.aniket.mutativefloatingactionbutton;
 
 import org.junit.Test;
 
