@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
 
 
-            mFab.setFabTextVisibility(if (mFab.getFabTextVisibility()) View.GONE else View.VISIBLE)
+            mFab.setFabTextVisibility(if (mFab.getFabTextVisibility() == View.VISIBLE) View.GONE else View.VISIBLE)
 
         }
 

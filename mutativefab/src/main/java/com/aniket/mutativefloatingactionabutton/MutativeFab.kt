@@ -20,12 +20,10 @@ import android.widget.TextView
  */
 class MutativeFab : ConstraintLayout {
 
-    private val TAG = MutativeFab::class.java.simpleName
-    //TODO: add v-21 of layout file for elevation
     private lateinit var imageView: ImageView
     private lateinit var textView: TextView
     private lateinit var constraintLayout: ConstraintLayout
-    private var textVisibility = true
+    private var textVisibility: Int = View.VISIBLE
     private val animationDuration: Long = 150
     private val constraintSet1 = ConstraintSet()
     private val constraintSet2 = ConstraintSet()
@@ -92,11 +90,9 @@ class MutativeFab : ConstraintLayout {
         var constraint: ConstraintSet = constraintSet1
         if (visibility == View.VISIBLE) {
             constraint = constraintSet1
-            textVisibility = true
         }
         if (visibility == View.GONE) {
             constraint = constraintSet2
-            textVisibility = false
         }
 
         val myTransition = ChangeBounds()
@@ -104,6 +100,8 @@ class MutativeFab : ConstraintLayout {
 
         TransitionManager.beginDelayedTransition(this, myTransition)
         constraint.applyTo(constraintLayout)
+
+        textVisibility = visibility
     }
 
 
@@ -116,6 +114,6 @@ class MutativeFab : ConstraintLayout {
     }
 
 
-    fun getFabTextVisibility(): Boolean = textVisibility
+    fun getFabTextVisibility(): Int = textVisibility
 
 }

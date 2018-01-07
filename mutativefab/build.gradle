@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='com.github.aniketbhoite'
+group = 'com.github.aniketbhoite'
 
 android {
     compileSdkVersion 26
@@ -46,5 +46,6 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'    }
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
 }
