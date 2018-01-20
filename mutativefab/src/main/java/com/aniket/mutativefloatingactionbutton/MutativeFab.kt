@@ -6,6 +6,7 @@ import android.graphics.PorterDuff
 import android.support.annotation.ColorInt
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
+import android.support.design.widget.CoordinatorLayout
 import android.support.v4.content.ContextCompat
 import android.transition.ChangeBounds
 import android.transition.TransitionManager
@@ -18,6 +19,8 @@ import android.widget.TextView
 /**
  * Created by aniket on 03-12-2017.
  */
+
+@CoordinatorLayout.DefaultBehavior(SnackbarBehavior::class)
 class MutativeFab : ConstraintLayout {
 
     private lateinit var imageView: ImageView
