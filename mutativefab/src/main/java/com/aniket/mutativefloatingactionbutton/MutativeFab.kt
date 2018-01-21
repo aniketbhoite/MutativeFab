@@ -42,6 +42,8 @@ class MutativeFab : ConstraintLayout {
         constraintLayout = view.findViewById(R.id.constraint_Layout)
         constraintSet1.clone(constraintLayout)
         constraintSet2.clone(context, R.layout.mutative_fab_layout_alt)
+        view.isClickable = true
+        view.isFocusable = true
     }
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {

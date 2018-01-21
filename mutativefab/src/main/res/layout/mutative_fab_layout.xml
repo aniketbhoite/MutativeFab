@@ -8,9 +8,8 @@
     android:layout_margin="8dp"
     android:animateLayoutChanges="true"
     android:background="@drawable/fab_background"
-    android:clickable="true"
+    android:duplicateParentState="true"
     android:elevation="2dp"
-    android:focusable="true"
     android:padding="14dp"
     android:stateListAnimator="@anim/fab_animator"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_chat" />
+        tools:src="@drawable/ic_chat"/>
 
     <TextView
         android:id="@+id/card_textView"

@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import com.aniket.mutativefloatingactionbutton.MutativeFab
 
 
@@ -45,6 +46,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        mFab.setOnClickListener {
+            Toast.makeText(this,"Toast",Toast.LENGTH_SHORT).show()
+        }
 
     }
 
