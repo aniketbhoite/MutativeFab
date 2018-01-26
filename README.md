@@ -5,6 +5,7 @@
 
 
 ![Mutative button demo gif](https://user-images.githubusercontent.com/13782400/34786063-02843f1a-f659-11e7-89d4-8507a89facbb.gif)
+![New demo](https://user-images.githubusercontent.com/13782400/35433701-6307c50c-02aa-11e8-8142-698a06df529d.gif)
 
 ![Button design](https://user-images.githubusercontent.com/13782400/34787268-af5fec18-f65c-11e7-9f04-312370cd09b6.png)
 
@@ -25,7 +26,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.aniketbhoite:MutativeFab:1.0.5'
+    compile 'com.github.aniketbhoite:MutativeFab:1.0.6'
 }
 ```
 
