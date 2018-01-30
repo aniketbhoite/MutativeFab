@@ -21,7 +21,11 @@ import android.widget.TextView
  */
 
 @CoordinatorLayout.DefaultBehavior(SnackbarBehavior::class)
-class MutativeFab : ConstraintLayout {
+class MutativeFab @JvmOverloads constructor(
+        context: Context,
+        attributeSet: AttributeSet? = null,
+        defStyle: Int = 0
+) : ConstraintLayout(context, attributeSet, defStyle) {
 
     private lateinit var imageView: ImageView
     private lateinit var textView: TextView
@@ -31,24 +35,22 @@ class MutativeFab : ConstraintLayout {
     private val constraintSet1 = ConstraintSet()
     private val constraintSet2 = ConstraintSet()
 
-    constructor(context: Context) : super(context) {
-        init(context)
-    }
-
-    private fun init(context: Context) {
-        val view: View = inflate(context, R.layout.mutative_fab_layout, this)
-        imageView = view.findViewById(R.id.image)
-        textView = view.findViewById(R.id.card_textView)
-        constraintLayout = view.findViewById(R.id.constraint_Layout)
-        constraintSet1.clone(constraintLayout)
-        constraintSet2.clone(context, R.layout.mutative_fab_layout_alt)
-        view.isClickable = true
-        view.isFocusable = true
-    }
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        init(context)
-        getAttributeSet(context, attrs)
+    init {
+        inflate(context, R.layout.mutative_fab_layout, this).apply {
+            imageView = findViewById(R.id.image)
+            textView = findViewById(R.id.card_textView)
+            constraintLayout = findViewById(R.id.constraint_Layout)
+            constraintSet1.clone(constraintLayout)
+            constraintSet2.clone(context, R.layout.mutative_fab_layout_alt)
+            isClickable = true
+            isFocusable = true
+        }
+        attributeSet?.let {
+            getAttributeSet(
+                    context = context,
+                    attrs = it
+            )
+        }
     }
 
     private fun getAttributeSet(context: Context, attrs: AttributeSet) {
@@ -74,11 +76,6 @@ class MutativeFab : ConstraintLayout {
         setFabTextColor(fabTextColor)
 
         typedArray.recycle()
-    }
-
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        init(context)
-        getAttributeSet(context, attrs)
     }
 
     fun setFabIcon(resId: Int) {
