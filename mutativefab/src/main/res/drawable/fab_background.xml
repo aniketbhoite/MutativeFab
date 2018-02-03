@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#e0e0e0">
-    <item android:id="@+id/fab_shape">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:topLeftRadius="@dimen/fab_radius"
+                android:topRightRadius="@dimen/fab_radius"
+                android:bottomRightRadius="@dimen/fab_shadow_radius"
+                android:bottomLeftRadius="@dimen/fab_shadow_radius" />
+            <gradient
+                android:angle="270"
+                android:startColor="@android:color/transparent"
+                android:endColor="@color/shadowEndColor"/>
+        </shape>
+    </item>
+    <item android:id="@+id/fab_shape"
+        android:bottom="1.5dp">
         <shape xmlns:android="http://schemas.android.com/apk/res/android"
             android:shape="rectangle">
-            <corners android:radius="30dp" />
+            <corners android:radius="@dimen/fab_radius" />
             <solid android:color="@color/colorAccent" />
         </shape>
     </item>
-</ripple>
+</layer-list>

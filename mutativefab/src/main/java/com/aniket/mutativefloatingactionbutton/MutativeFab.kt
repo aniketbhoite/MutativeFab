@@ -3,13 +3,16 @@ package com.aniket.mutativefloatingactionbutton
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.PorterDuff
+import android.graphics.drawable.LayerDrawable
+import android.os.Build
 import android.support.annotation.ColorInt
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
 import android.support.design.widget.CoordinatorLayout
+import android.support.transition.ChangeBounds
+import android.support.transition.TransitionManager
 import android.support.v4.content.ContextCompat
-import android.transition.ChangeBounds
-import android.transition.TransitionManager
+import android.support.v4.view.ViewCompat
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
@@ -42,6 +45,7 @@ class MutativeFab @JvmOverloads constructor(
             constraintLayout = findViewById(R.id.constraint_Layout)
             constraintSet1.clone(constraintLayout)
             constraintSet2.clone(context, R.layout.mutative_fab_layout_alt)
+            ViewCompat.setElevation(constraintLayout, 12f)
             isClickable = true
             isFocusable = true
         }
@@ -112,7 +116,15 @@ class MutativeFab @JvmOverloads constructor(
     }
 
     fun setFabBackgroundColor(@ColorInt color: Int) {
-        constraintLayout.background.mutate().setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            if (constraintLayout.background is LayerDrawable) {
+                (constraintLayout.background as LayerDrawable).findDrawableByLayerId(R.id.fab_shape)?.apply {
+                    mutate().setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
+                }
+            }
+        } else {
+            constraintLayout.background.mutate().setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
+        }
     }
 
 
