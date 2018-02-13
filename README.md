@@ -1,7 +1,7 @@
 # MutativeFab
 
 
-[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21) 
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
 
 
 ![Mutative button demo gif](https://user-images.githubusercontent.com/13782400/34786063-02843f1a-f659-11e7-89d4-8507a89facbb.gif)
@@ -26,7 +26,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.aniketbhoite:MutativeFab:1.0.6'
+    compile 'com.github.aniketbhoite:MutativeFab:1.0.7'
 }
 ```
 
