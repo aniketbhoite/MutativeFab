@@ -12,7 +12,6 @@ import android.support.design.widget.CoordinatorLayout
 import android.support.transition.ChangeBounds
 import android.support.transition.TransitionManager
 import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewCompat
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
@@ -33,10 +32,30 @@ class MutativeFab @JvmOverloads constructor(
     private lateinit var imageView: ImageView
     private lateinit var textView: TextView
     private lateinit var constraintLayout: ConstraintLayout
-    private var textVisibility: Int = View.VISIBLE
     private val animationDuration: Long = 150
     private val constraintSet1 = ConstraintSet()
     private val constraintSet2 = ConstraintSet()
+
+    var fabTextVisibility: Int = View.VISIBLE
+        set(visibility) {
+            var constraint: ConstraintSet = constraintSet1
+            if (visibility == View.VISIBLE) {
+                constraint = constraintSet1
+            }
+            if (visibility == View.GONE) {
+                constraint = constraintSet2
+            }
+
+            val myTransition = ChangeBounds()
+            myTransition.duration = animationDuration
+
+            TransitionManager.beginDelayedTransition(this, myTransition)
+            constraint.applyTo(constraintLayout)
+
+            field = visibility
+        }
+
+
 
     init {
         inflate(context, R.layout.mutative_fab_layout, this).apply {
@@ -45,7 +64,6 @@ class MutativeFab @JvmOverloads constructor(
             constraintLayout = findViewById(R.id.constraint_Layout)
             constraintSet1.clone(constraintLayout)
             constraintSet2.clone(context, R.layout.mutative_fab_layout_alt)
-            ViewCompat.setElevation(constraintLayout, 12f)
             isClickable = true
             isFocusable = true
         }
@@ -75,7 +93,7 @@ class MutativeFab @JvmOverloads constructor(
                 ContextCompat.getColor(context, R.color.colorAccent))
         setFabIcon(imageResId)
         setFabText(fabText)
-        setFabTextVisibility(fabTextVisibility)
+        this.fabTextVisibility = fabTextVisibility
         setFabBackgroundColor(fabBackgroundColor)
         setFabTextColor(fabTextColor)
 
@@ -89,27 +107,6 @@ class MutativeFab @JvmOverloads constructor(
     fun setFabText(text: String) {
         textView.text = text
     }
-
-
-    fun setFabTextVisibility(visibility: Int) {
-
-        var constraint: ConstraintSet = constraintSet1
-        if (visibility == View.VISIBLE) {
-            constraint = constraintSet1
-        }
-        if (visibility == View.GONE) {
-            constraint = constraintSet2
-        }
-
-        val myTransition = ChangeBounds()
-        myTransition.duration = animationDuration
-
-        TransitionManager.beginDelayedTransition(this, myTransition)
-        constraint.applyTo(constraintLayout)
-
-        textVisibility = visibility
-    }
-
 
     fun setFabTextColor(@ColorInt color: Int) {
         textView.setTextColor(color)
@@ -127,7 +124,5 @@ class MutativeFab @JvmOverloads constructor(
         }
     }
 
-
-    fun getFabTextVisibility(): Int = textVisibility
 
 }

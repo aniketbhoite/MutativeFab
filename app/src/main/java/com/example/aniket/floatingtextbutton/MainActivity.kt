@@ -1,5 +1,6 @@
 package com.example.aniket.floatingtextbutton
 
+import android.content.Context
 import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.support.constraint.ConstraintSet
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
 
 
-            mFab.setFabTextVisibility(if (mFab.getFabTextVisibility() == View.VISIBLE) View.GONE else View.VISIBLE)
+            mFab.fabTextVisibility = if (mFab.fabTextVisibility == View.VISIBLE) View.GONE else View.VISIBLE
 
         }
 
