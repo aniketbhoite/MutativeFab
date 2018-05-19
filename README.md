@@ -27,7 +27,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.aniketbhoite:MutativeFab:1.0.7'
+    compile 'com.github.aniketbhoite:MutativeFab:1.0.8'
 }
 ```
 
@@ -58,7 +58,10 @@ Add floating text button to your layout file like this:
             mFab.setFabTextVisibility(View.VISIBLE);//or View.GONE only
             //to get TextView visibility
             mFab.getFabTextVisibility();//returns Int
-            mFab.setFabTypeface(typeface);
+            mFab.setFabTypeface(typeface);//to change text font
+            
+            //in kotlin use can directly access fabText visibility by
+            mFab.fabTextVisibility = View.VISIBLE 
 ```            
 If your project do not have kotlin support follow these steps
 
@@ -66,7 +69,7 @@ If your project do not have kotlin support follow these steps
 ```
     buildscript {
     //this
-    ext.kotlin_version = '1.2.10'
+    ext.kotlin_version = '1.2.41'
     repositories {
         google()
         jcenter()
