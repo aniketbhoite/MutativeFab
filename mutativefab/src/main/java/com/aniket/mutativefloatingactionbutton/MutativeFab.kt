@@ -3,6 +3,7 @@ package com.aniket.mutativefloatingactionbutton
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.PorterDuff
+import android.graphics.Typeface
 import android.graphics.drawable.LayerDrawable
 import android.os.Build
 import android.support.annotation.ColorInt
@@ -122,6 +123,10 @@ class MutativeFab @JvmOverloads constructor(
         } else {
             constraintLayout.background.mutate().setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
         }
+    }
+
+    fun setFabTypeface(typeface: Typeface){
+        textView.typeface = typeface
     }
 
 

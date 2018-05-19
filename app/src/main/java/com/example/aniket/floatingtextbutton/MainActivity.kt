@@ -1,9 +1,6 @@
 package com.example.aniket.floatingtextbutton
 
-import android.content.Context
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.constraint.ConstraintSet
 import android.support.design.widget.CoordinatorLayout
 import android.support.design.widget.Snackbar
 import android.support.v4.content.ContextCompat
@@ -12,6 +9,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.aniket.mutativefloatingactionbutton.MutativeFab
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,13 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val constraintLayout: ConstraintLayout = findViewById(R.id.constraintLayout)
-        val button = findViewById<Button>(R.id.button)
 
-        val constraintSet1 = ConstraintSet()
-        constraintSet1.clone(constraintLayout)
-        val constraintSet2 = ConstraintSet()
-        constraintSet2.clone(this, R.layout.activity_main_alt)
         val coordinator = findViewById<CoordinatorLayout>(R.id.coordinator)
 
         val showSnackbar = findViewById<Button>(R.id.showSnackbar)

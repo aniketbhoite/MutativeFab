@@ -2,6 +2,7 @@
 
 
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15)
+[![GitHub license](https://img.shields.io/github/license/aniketbhoite/MutativeFab.svg)](https://github.com/aniketbhoite/MutativeFab/blob/master/LICENSE)
 
 
 ![Mutative button demo gif](https://user-images.githubusercontent.com/13782400/34786063-02843f1a-f659-11e7-89d4-8507a89facbb.gif)
@@ -26,7 +27,7 @@ allprojects {
 
 ```
 dependencies {
-    compile 'com.github.aniketbhoite:MutativeFab:1.0.7'
+    compile 'com.github.aniketbhoite:MutativeFab:1.0.8'
 }
 ```
 
@@ -57,6 +58,10 @@ Add floating text button to your layout file like this:
             mFab.setFabTextVisibility(View.VISIBLE);//or View.GONE only
             //to get TextView visibility
             mFab.getFabTextVisibility();//returns Int
+            mFab.setFabTypeface(typeface);//to change text font
+            
+            //in kotlin use can directly access fabText visibility by
+            mFab.fabTextVisibility = View.VISIBLE 
 ```            
 If your project do not have kotlin support follow these steps
 
@@ -64,7 +69,7 @@ If your project do not have kotlin support follow these steps
 ```
     buildscript {
     //this
-    ext.kotlin_version = '1.2.10'
+    ext.kotlin_version = '1.2.41'
     repositories {
         google()
         jcenter()
